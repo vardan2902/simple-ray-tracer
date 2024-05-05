@@ -5,7 +5,6 @@
 #include <QImage>
 #include <QPixmap>
 
-#include "Camera.h"
 #include "Renderer.h"
 #include "Scene.h"
 
@@ -16,10 +15,10 @@ int main(int argc, char *argv[]) {
     if (argc > 1) {
         filePath = argv[1];
     }
+    SceneParser parser;
 
-    Scene scene = SceneParser::parseScene(filePath);
-    Camera camera(Vector3D(0, 0, -2), Vector3D(0, 0, -1), 90.0f);
-    Renderer renderer(scene, camera, 800, 600);
+    Scene scene = parser.parseScene(filePath);
+    Renderer renderer(scene, 800, 600);
 
     QImage image = renderer.renderScene();
 

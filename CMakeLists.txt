@@ -30,13 +30,20 @@ add_executable(
         include/Camera.h
         classes/scene/Camera.cpp
         include/Lights.h
-        classes/lights/Light.cpp
         classes/scene/SceneParser.cpp
         include/Renderer.h
         classes/scene/Renderer.cpp
         include/constants.h
         utils/reflection_refraction_calculation_utils.cpp
         include/utils.h
+        classes/figures/Plane.cpp
+        classes/figures/Triangle.cpp
+        classes/figures/Mesh.cpp
+        include/SceneObject.h
+        classes/lights/PointLight.cpp
+        classes/lights/DirectionalLight.cpp
+        utils/color_utils.cpp
+        classes/lights/SpotLight.cpp
 )
 
 target_link_libraries(RayTracer PRIVATE Qt6::Widgets)

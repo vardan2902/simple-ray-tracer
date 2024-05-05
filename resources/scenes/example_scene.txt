@@ -1,13 +1,42 @@
-# Comments start with a hash
-# Define spheres with: sphere x y z radius r g b reflectivity transparency refractiveIndex
-# Define lights with: light x y z r g b
+# Scene file format:
+# Comments start with a hash symbol (#)
 
-# Sphere format:
-# x y z (position), radius, r g b (color), reflectivity, transparency, refractiveIndex
+# Scene params
+shininess 32
 
-sphere 0 0 -5 1 1 0 0 0.5 0.0 1.5  # Red sphere, partially reflective
-sphere -2 0 -6 1 0 1 0 0.0 0.5 1.3  # Green sphere, partially transparent
-sphere 2 0 -6 1 0 0 1 0.0 0.0 1.0  # Blue sphere, non-reflective and opaque
+# Camera positioned to view the center of the scene
+camera 0 2 15 0 0 1 45
+# camera 12 4 -2 1 0.2 0 45
+# camera -12 4 -2 -1 0.2 0 60
 
-# Light format: x y z (position), r g b (color)
-light 5 10 -10 1 0.8 0.9
+# A red reflective sphere
+sphere 0 1 -4 1 1 0 0 0 1 1
+# A green reflective sphere
+# sphere -2.5 1 -6 1 0 1 0 0 1 0
+sphere -2.5 2 -2 2 0 1 0 0 1 1
+# A blue reflective sphere
+# sphere 2.5 1 -6 1 0 0 1 1 1 1
+sphere 2.5 1 -1 1 0 0 1 0 1 1
+
+# Spotlight for the red sphere
+# spot-light 0 3 -6 0 -1 0 10 2 0.2 0.2 0.2 0.9
+
+# A large plane representing the ground
+plane 0 0 0 0 1 0 1 1 1 0 0 1
+
+# Directional light simulating sunlight
+# directional-light -0.5 -1 -0.5 1 1 1 0.6
+
+# Point light to add some ambient illumination
+# point-light 0 5 -5 1 1 1 2 0.4 0.22 0.20
+point-light 0 5 -5 1 0.1 0.1 2 0.4 0.22 0.20
+point-light 2.5 5 -5 0.1 1 0.1 3 0.4 0.22 0.20
+point-light -2.5 5 -5 0.1 0.1 1 3 0.4 0.22 0.20
+
+# A triangle
+# triangle 1 0 -5 -1 0 -5 0 2 -5 0.5 0.2 0.8 0.3 0.1 1.4
+
+# A simple pyramid mesh composed of four triangles
+# Mesh format: mesh numVertices numFaces [vertices] [faces]
+# Mesh vertices (base and tip of the pyramid)
+# mesh 5 6 1 0.5 0.5 0.5 0.1 1.5 0 0 -4 1 0 -4 1 0 -3 0 0 -3 0.5 1 -3.5 0 1 4 1 2 4 2 3 4 3 0 4 0 1 2 3 1 3 2 0

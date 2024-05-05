@@ -8,9 +8,9 @@
 
 class Renderer {
 public:
-    Renderer(const Scene &scene, const Camera &camera, int width, int height);
+    Renderer(const Scene &scene, int width, int height);
 
-    QImage renderScene() const;
+    [[nodiscard]] QImage renderScene() const;
 
 private:
     Scene scene;
@@ -18,7 +18,7 @@ private:
     int imageWidth;
     int imageHeight;
 
-    QColor calculatePixelColor(const Ray &ray, int depth) const;
+    [[nodiscard]] QColor traceRay(const Ray &ray, int depth) const;
 };
 
 #endif // RENDERER_H

@@ -1,5 +1,0 @@
-/Users/varpet/Documents/CLion Projects/RayTracer/cmake-build-debug/CMakeFiles/RayTracer.dir
-/Users/varpet/Documents/CLion Projects/RayTracer/cmake-build-debug/CMakeFiles/edit_cache.dir
-/Users/varpet/Documents/CLion Projects/RayTracer/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/Users/varpet/Documents/CLion Projects/RayTracer/cmake-build-debug/CMakeFiles/RayTracer_autogen_timestamp_deps.dir
-/Users/varpet/Documents/CLion Projects/RayTracer/cmake-build-debug/CMakeFiles/RayTracer_autogen.dir
